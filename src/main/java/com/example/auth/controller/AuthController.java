@@ -40,7 +40,7 @@ public class AuthController implements AuthControllerDocs {
 
     @Override
     @PostMapping("/signin")
-    public ResponseEntity<Void> login(LoginRequest loginRequest) {
+    public ResponseEntity<Void> login(@RequestBody @Valid LoginRequest loginRequest) {
 
         User user = authService.login(loginRequest);
         List<String> roles = authService.getRoles(user);

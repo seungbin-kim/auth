@@ -36,5 +36,5 @@ logging:
     org.hibernate.orm.jdbc.bind: trace
 
 jwt:
-  secret: helloWorld
+  secret: helloWorldhelloWorldhelloWorldhelloWorldhelloWorldhelloWorldhelloWorld
   expiration_time: 300000 # 300000 밀리초 - 300초 - 5분
