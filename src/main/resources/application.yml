@@ -1,0 +1,40 @@
+spring:
+
+  datasource:
+    url: jdbc:h2:mem:test
+    username: sa
+
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+
+  jpa:
+    defer-datasource-initialization: true
+    hibernate:
+      ddl-auto: create
+    properties:
+      hibernate:
+        format_sql: true
+        highlight_sql: true
+        use_sql_comments: true
+
+  sql:
+    init:
+      mode: always
+
+springdoc:
+  swagger-ui:
+    enabled: on
+    default-models-expand-depth: -1
+    display-request-duration: true
+
+logging:
+  level:
+    kr.co.wanted: debug
+    org.hibernate.SQL: debug
+    org.hibernate.orm.jdbc.bind: trace
+
+jwt:
+  secret: helloWorld
+  expiration_time: 300000 # 300000 밀리초 - 300초 - 5분
