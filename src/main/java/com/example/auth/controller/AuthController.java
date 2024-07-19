@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.time.Duration;
 import java.util.List;
 
 @RestController
@@ -50,7 +51,7 @@ public class AuthController implements AuthControllerDocs {
         ResponseCookie accessToken = ResponseCookie.from("accessToken", jwt)
                 .httpOnly(true)
                 .path("/")
-                .maxAge(tokenUtils.getExpirationTime())
+                .maxAge(Duration.ofMillis(tokenUtils.getExpirationTime()))
                 .build();
 
         return ResponseEntity.ok()

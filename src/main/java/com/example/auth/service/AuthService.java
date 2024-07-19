@@ -41,7 +41,7 @@ public class AuthService {
 
         // role 검색
         List<Roles> roles = rolesRepository.findByNameIn(signupRequest.getRole());
-        if (roles.isEmpty()) {
+        if (signupRequest.getRole().size() != roles.size()) { // 입력 role과 찾은 role 개수가 같아야 함!
             throw new ApiException(ErrorCode.ROLE_NOT_FOUND);
         }
 
